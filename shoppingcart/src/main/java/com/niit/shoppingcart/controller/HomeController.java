@@ -1,27 +1,18 @@
-package com.niit.shoppingcart.controller;
-
+package com.niit.ShoppingCart.Controller;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-
 public class HomeController {
-	
-	
-	public HomeController()
-	{
-		System.out.println("homwe controller called");
-	}
 	
 	@RequestMapping("/")
 	public ModelAndView showHomepage()
 	{
 		System.out.println("Starting the method showHomepage");
 		//Specifying which page you have navigation
-		ModelAndView mv = new ModelAndView("/Home");
+		ModelAndView mv = new ModelAndView("Home");
 		
 		//Specifying what data you have to carry to homepage
 		
@@ -34,7 +25,7 @@ public class HomeController {
 	public ModelAndView showLoginpage()
 	{
 		System.out.println("Clicked on Login link");
-		ModelAndView mv = new ModelAndView("/Login");
+		ModelAndView mv = new ModelAndView("Login");
 		mv.addObject("isUserClickedLogin","true" );
 		
 		return mv;
@@ -44,7 +35,7 @@ public class HomeController {
 	public ModelAndView showRegistrationpage()
 	{
 		System.out.println("Clicked on Registration link");
-		ModelAndView mv=new ModelAndView("/Register");
+		ModelAndView mv=new ModelAndView("Register");
 		mv.addObject("isUserClickedRegister", "true");
 		return mv;
 	}
@@ -52,9 +43,7 @@ public class HomeController {
 	@RequestMapping("validate")
 	public ModelAndView validateCredentials(@RequestParam("user") String id, @RequestParam("password") String pwd)
 	{
-		ModelAndView  mv = new ModelAndView("/Home");
-		
-		System.out.println("user------>"+id + ""+"password----------->"+pwd);
+		ModelAndView  mv = new ModelAndView("Home");
 		
 		if(id.equals("niit") && pwd.equals("niit@123"))
 		{
@@ -63,7 +52,7 @@ public class HomeController {
 		}
 		else
 		{
-			mv.addObject("loginMessage", "Invalid Credentials...please try again");
+			mv.addObject("loginError", "Invalid Credentials...please try again");
 		}	
 		    return mv;
 		}	
