@@ -48,7 +48,7 @@ public class HomeController {
 		if(id.equals("niit") && pwd.equals("niit@123"))
 		{
 			
-			mv.addObject("loginMessege", "Valid Credentials");
+			mv.addObject("loginMessage", "Valid Credentials");
 		}
 		else
 		{
