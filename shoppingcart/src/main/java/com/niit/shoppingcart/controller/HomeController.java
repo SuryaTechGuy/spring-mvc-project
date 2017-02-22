@@ -21,6 +21,19 @@ public class HomeController {
 		return mv;
 	}
 	
+	@RequestMapping("Home")
+	public ModelAndView showHome()
+	{
+		System.out.println("Back To Homepage");
+		//Specifying which page you have navigation
+		ModelAndView mv = new ModelAndView("Home");
+		
+		//Specifying what data you have to carry to homepage
+		
+			
+		return mv;
+	}
+	
 	@RequestMapping("Login")
 	public ModelAndView showLoginpage()
 	{
