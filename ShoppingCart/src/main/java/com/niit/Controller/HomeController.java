@@ -1,4 +1,5 @@
-package com.niit.ShoppingCart.Controller;
+package com.niit.Controller;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +21,24 @@ public class HomeController {
 		
 		return mv;
 	}
+	
+	@RequestMapping("ForgotPassword")
+	public ModelAndView showForgotpage()
+	{
+		System.out.println("show ForgotPassword page");
+		ModelAndView mv = new ModelAndView("ForgotPassword");
+			
+		return mv;
+	}
+	
+	@RequestMapping("forgot")
+	public ModelAndView validateCredentials(@RequestParam("user") String id, @RequestParam("password") String pwd,@RequestParam("number") String num)
+	{
+		ModelAndView  mv = new ModelAndView("Login");
+			mv.addObject("fgmsg", "Password Changed Successfully");		
+			
+		    return mv;
+		}	
 	
 	@RequestMapping("Home")
 	public ModelAndView showHome()
@@ -44,15 +63,6 @@ public class HomeController {
 		return mv;
 	}
 	
-	@RequestMapping("Register")
-	public ModelAndView showRegistrationpage()
-	{
-		System.out.println("Clicked on Registration link");
-		ModelAndView mv=new ModelAndView("Register");
-		mv.addObject("isUserClickedRegister", "true");
-		return mv;
-	}
-	
 	@RequestMapping("validate")
 	public ModelAndView validateCredentials(@RequestParam("user") String id, @RequestParam("password") String pwd)
 	{
@@ -65,7 +75,7 @@ public class HomeController {
 		}
 		else
 		{
-			mv.addObject("loginError", "Invalid Credentials...please try again");
+			mv.addObject("loginMessage", "Invalid Credentials...please try again");
 		}	
 		    return mv;
 		}	

@@ -17,21 +17,17 @@
       <a class="navbar-brand" href="Home">ShoppingCart</a>
     </div>
     <ul class="nav navbar-nav">
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Electronics<span class="caret"></span></a>
+    <li><a href="Category">Category</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Electronics<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Mobiles</a></li>
           <li><a href="#">Laptops</a></li>
           <li><a href="#">Accessories</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Appliances<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Mobiles</a></li>
-          <li><a href="#">Laptops</a></li>
-          <li><a href="#">Accessories</a></li>
-    </ul>
-    </li>
-    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Men<span class="caret"></span></a>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Men<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Footwear</a></li>
           <li><a href="#">Clothing</a></li>
@@ -41,8 +37,8 @@
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Women<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Clothing</a></li>
-          <li><a href="#">Beauty & Grooming</a></li>
-          <li><a href="#">Jewellery</a></li>
+          <li><a href="#">Beauty Grooming</a></li>
+          <li><a href="#">Jewels</a></li>
     </ul>
     </li>
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Baby & Kids<span class="caret"></span></a>
@@ -68,20 +64,20 @@
           </button>
         </div>
       </div>
-    </form>  
+      </ul class="nav navbar-nav">
+    <form class="navbar-form navbar-left"> 
   <ul class="nav navbar-nav">
       <li><a href="Register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul></div>  
+      <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+  </ul></div>  
+  
 </nav>
-
-<div class="container">
-<center> <h3>${msg}</h3> </center>
+<br>
+<center><h3>${msg}</h3> </center>
 </div>
 <br>
 <center>${loginMessage}</center>
-<br>
-<center>${loginError}</center>
 <hr>
 <br>
 </body>
