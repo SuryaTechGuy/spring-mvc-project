@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +15,7 @@
         
       <div class="row">   <div class="main"> 
       
-      <form action="category" method="post">
+      <form action=save method=POST>
       <div class="form-group">
           <label for="inputCategoryid">ID</label>
           <input type="text" name="id" class="form-control">
@@ -30,7 +31,7 @@
              
   <button type="submit" class="btn btn btn-primary">
           Save
-        </button> 
+        </button>
          </form>  
        </div>
        </div>
