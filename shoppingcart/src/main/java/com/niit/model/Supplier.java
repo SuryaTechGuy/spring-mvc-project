@@ -11,95 +11,63 @@ import org.springframework.stereotype.Component;
 @Table(name="Supplier")  
 @Component               
 public class Supplier {
-
-
+		
 	@Id
-	private int Id;
+	private String id;
 	
 	@Column  
-	private String SupplierName;
+	private String name;
 	
 	@Column
-	private String Email;
+	private String email;
 	
 	@Column
-	private String MobileNumber;
+	private String mobilenumber;
 	
 	@Column
-	private String Address;
+	private String address;
 
-	@Column
-	private String ProductName;
-
-	@Column
-	private String Quantity;
-
-	@Column
-	private String Category;
-
-	public int getId() {
-		return Id;
+	
+	public String getId() {
+		return id;
 	}
 
-	public void setId(int id) {
-		Id = id;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public String getSupplierName() {
-		return SupplierName;
+	public String getName() {
+		return name;
 	}
 
-	public void setSupplierName(String supplierName) {
-		SupplierName = supplierName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
-	public String getMobileNumber() {
-		return MobileNumber;
+	public String getMobilenumber() {
+		return mobilenumber;
 	}
 
-	public void setMobileNumber(String mobileNumber) {
-		MobileNumber = mobileNumber;
+	public void setMobilenumber(String mobilenumber) {
+		this.mobilenumber = mobilenumber;
 	}
 
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
 
-	public String getProductName() {
-		return ProductName;
-	}
-
-	public void setProductName(String productName) {
-		ProductName = productName;
-	}
-
-	public String getQuantity() {
-		return Quantity;
-	}
-
-	public void setQuantity(String quantity) {
-		Quantity = quantity;
-	}
-
-	public String getCategory() {
-		return Category;
-	}
-
-	public void setCategory(String category) {
-		Category = category;
-	}
 	
-			
+	
 }

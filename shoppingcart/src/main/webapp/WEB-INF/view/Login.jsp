@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
+<c:if test="${pageContext.request.userPrincipal.name != null}">
+    	 <%@page session ="true" %>
+    </c:if>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,10 +30,11 @@
         <span class="span-or">or</span>
       </div>
       
-      <form  action="validate" method="post">
+      <form action="loginprocess" method="post">
+      
         <div class="form-group">
           <label for="inputUsernameEmail">Username Or Email</label>
-          <input type="text" name="user" class="form-control" id="inputUsernameEmail">
+          <input type="text" name="username" class="form-control" id="inputUsernameEmail">
         </div>
         <div class="form-group">
           <a class="pull-right" href="ForgotPassword">Forgot password?</a>
@@ -44,8 +50,8 @@
         <button type="submit" class="btn btn btn-primary">
           Log In
         </button>   
-       </div></form>         
-    </div>    
+       </div></form>
+      </div>    
   </div>
 </div>
 </body>

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class Category {
 		
 	@Id
-	private int id;
+	private String id;
 	
 	@Column  
 	private String name;
@@ -21,12 +21,13 @@ public class Category {
 	@Column
 	private String description;
 
-	public int getId() {
+	
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int i) {
-		this.id = i;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getName() {

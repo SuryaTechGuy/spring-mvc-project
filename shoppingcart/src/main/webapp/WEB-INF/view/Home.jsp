@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,19 +16,24 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="Home">ShoppingCart</a>
-       </div>
-       <div class="container-fluid">
-    <div class="navbar-header">
       <a class="navbar-brand" href="Category">Category</a>
        </div>
-       <div class="navbar-header">
-      <a class="navbar-brand" href="Supplier">Supplier</a>
-       </div>
-    <div class="navbar-header">
-      <a class="navbar-brand" href="Product">Product</a>
-       </div>
      <ul class="nav navbar-nav">
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Electronics<span class="caret"></span></a>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Footwear<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Male</a></li>
+          <li><a href="#">Female</a></li>
+          <li><a href="#">Kids</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Home&Kitchen<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Kitchenware</a></li>
+          <li><a href="#">HomeDecor</a></li>
+          <li><a href="#">HomeAppliances</a></li>
+        </ul>
+      </li>
+     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Electronics<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Mobiles</a></li>
           <li><a href="#">Laptops</a></li>
@@ -57,11 +65,18 @@
     </form>
     </ul>
     <ul class="nav navbar-nav">
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
-      <li><a href="Register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-      </div></div>
+       <c:if test="${ Loggedin != true }">
+<li><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+<li><a href="Register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+    </c:if>
+<c:if test="${ Loggedin == true }">
+<li><a href="userpage?username=${Customer }"><span class="glyphicon glyphicon-user"></span> ${Customer}'s Account</a></li>
+<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+<li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+       </c:if>
+  	</ul>
+      </div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
    <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -104,10 +119,7 @@
 <br>
 <div align="center"><h3>${msg}</h3></div>
 <br>
-<div align="center">${loginMessage}</div>
+<div align="center"><h3>${loginmessage}</h3></div>
 <hr>
-<br>
-<a href="ViewCategory">view category</a>
-<a href="EditCategory">Edit category</a>
 </body>
 </html>
